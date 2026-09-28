@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">vra-pringles</string>
+    <string name="pringles">Pringles</string>
+    <string name="desk">Deskripsi:</string>
+    <string name="deskripsi">
+        Pringles Original adalah makanan ringan berbentuk keripik kentang yang memiliki rasa gurih dan tekstur renyah.
+        Pringles cocok dijadikan camilan dan biasanya dikonsumsi saat santai atau berkumpul bersama teman.
+    </string>
+    <string name="komp">Komposisi:</string>
+    <string name="komposisi">
+        - Kentang kering
+        \n- Minyak nabati
+        \n- Tepung jagung
+        \n- Tepung beras
+        \n- Maltodekstrin
+        \n- Garam
+        \n- Penguat rasa
+        \n- Bahan perisa
+    </string>
+    <string name="gz">Kandungan Gizi:</string>
+    <string name="gizi">
+        - Energi: 150 kkal
+        \n- Lemak: 9 g
+        \n- Karbohidrat: 16 g
+        \n- Protein: 1 g
+        \n- Natrium: 150 mg
+    </string>
+</resources>
