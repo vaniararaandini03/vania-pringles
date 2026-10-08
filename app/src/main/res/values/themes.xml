@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Vrapringles" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.Vra_pringles" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Merubah warna primary ke Cokelat Kopi Logo -->
+        <item name="colorPrimary">@color/coffee_dark</item>
+        <item name="colorPrimaryVariant">@color/coffee_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
     </style>
 
-    <style name="Theme.Vrapringles" parent="Base.Theme.Vrapringles" />
+    <style name="Theme.Vra_pringles" parent="Base.Theme.Vra_pringles" />
 </resources>

@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCEFD8">
+
+    <!-- Header Atas (Toolbar Dosen + Judul, Search, Filter Category) -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <!-- Toolbar sesuai kodingan dosen -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/coffee_dark"
+            app:titleTextColor="@color/white"
+            app:subtitleTextColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <!-- Title & Icons -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvHeaderTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What would you\nlike to drink today?"
+                    android:textColor="#5C3A21"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/btnNavMenu"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@android:drawable/ic_menu_sort_by_size"
+                    app:tint="#5C3A21" />
+
+                <ImageView
+                    android:id="@+id/btnNotification"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_toStartOf="@id/btnNavMenu"
+                    android:src="@android:drawable/ic_popup_reminder"
+                    app:tint="#5C3A21" />
+            </RelativeLayout>
+
+            <!-- Search Bar -->
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_search_rounded"
+                android:hint="Search.."
+                android:paddingHorizontal="16dp"
+                android:textColorHint="#A07855"
+                android:textSize="14sp" />
+
+            <!-- Category Chips -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_search_rounded"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#5C3A21"
+                    android:text="Coffee"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    app:cornerRadius="20dp" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="Chocolate"
+                    android:textAllCaps="false"
+                    android:textColor="#5C3A21"
+                    android:textSize="12sp"
+                    app:elevation="0dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="#D9A05B" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="Others"
+                    android:textAllCaps="false"
+                    android:textColor="#5C3A21"
+                    android:textSize="12sp"
+                    app:elevation="0dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Area Scrollable (NestedScrollView) -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_card_top_rounded"
+        android:padding="20dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="80dp">
+
+            <!-- MENU 1: Iced Americano -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#FFF8EE"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:strokeColor="#EAD8C0"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/imgMenu1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/logo_cafe_jambang"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTitle1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Iced Americano"
+                        android:textColor="#5C3A21"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd1"
+                        app:layout_constraintStart_toEndOf="@+id/imgMenu1"
+                        app:layout_constraintTop_toTopOf="@+id/imgMenu1" />
+
+                    <TextView
+                        android:id="@+id/tvDesc1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Double espresso and water, served cold"
+                        android:textColor="#8C6D53"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd1"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle1"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitle1" />
+
+                    <TextView
+                        android:id="@+id/tvPrice1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Rp 20.000"
+                        android:textColor="#5C3A21"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle1"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDesc1" />
+
+                    <ImageButton
+                        android:id="@+id/btnAdd1"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_button_plus"
+                        android:src="@android:drawable/ic_input_add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#FFFFFF" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- MENU 2: Iced Coffee Sweet Heaven -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#FFF8EE"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:strokeColor="#EAD8C0"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/imgMenu2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/logo_cafe_jambang"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTitle2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Iced Coffee Sweet Heaven"
+                        android:textColor="#5C3A21"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd2"
+                        app:layout_constraintStart_toEndOf="@+id/imgMenu2"
+                        app:layout_constraintTop_toTopOf="@+id/imgMenu2" />
+
+                    <TextView
+                        android:id="@+id/tvDesc2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Double espresso with condensed milk, served cold"
+                        android:textColor="#8C6D53"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd2"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle2"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitle2" />
+
+                    <TextView
+                        android:id="@+id/tvPrice2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Rp 24.000"
+                        android:textColor="#5C3A21"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle2"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDesc2" />
+
+                    <ImageButton
+                        android:id="@+id/btnAdd2"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_button_plus"
+                        android:src="@android:drawable/ic_input_add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#FFFFFF" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- MENU 3: Hot Cappucino -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#FFF8EE"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:strokeColor="#EAD8C0"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/imgMenu3"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/logo_cafe_jambang"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTitle3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Hot Cappucino"
+                        android:textColor="#5C3A21"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd3"
+                        app:layout_constraintStart_toEndOf="@+id/imgMenu3"
+                        app:layout_constraintTop_toTopOf="@+id/imgMenu3" />
+
+                    <TextView
+                        android:id="@+id/tvDesc3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Double espresso and fresh milk, served hot"
+                        android:textColor="#8C6D53"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd3"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle3"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitle3" />
+
+                    <TextView
+                        android:id="@+id/tvPrice3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Rp 23.000"
+                        android:textColor="#5C3A21"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle3"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDesc3" />
+
+                    <ImageButton
+                        android:id="@+id/btnAdd3"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_button_plus"
+                        android:src="@android:drawable/ic_input_add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#FFFFFF" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- MENU 4: Iced Cappucino -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#FFF8EE"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:strokeColor="#EAD8C0"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/imgMenu4"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/logo_cafe_jambang"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTitle4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Iced Cappucino"
+                        android:textColor="#5C3A21"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd4"
+                        app:layout_constraintStart_toEndOf="@+id/imgMenu4"
+                        app:layout_constraintTop_toTopOf="@+id/imgMenu4" />
+
+                    <TextView
+                        android:id="@+id/tvDesc4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Double espresso and fresh milk, served cold"
+                        android:textColor="#8C6D53"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd4"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitle4" />
+
+                    <TextView
+                        android:id="@+id/tvPrice4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Rp 23.500"
+                        android:textColor="#5C3A21"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle4"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDesc4" />
+
+                    <ImageButton
+                        android:id="@+id/btnAdd4"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_button_plus"
+                        android:src="@android:drawable/ic_input_add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#FFFFFF" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- MENU 5: Caramel Macchiato -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#FFF8EE"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:strokeColor="#EAD8C0"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/imgMenu5"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/logo_cafe_jambang"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTitle5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Caramel Macchiato"
+                        android:textColor="#5C3A21"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd5"
+                        app:layout_constraintStart_toEndOf="@+id/imgMenu5"
+                        app:layout_constraintTop_toTopOf="@+id/imgMenu5" />
+
+                    <TextView
+                        android:id="@+id/tvDesc5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Espresso with vanilla syrup, milk, and caramel drizzle"
+                        android:textColor="#8C6D53"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd5"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle5"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitle5" />
+
+                    <TextView
+                        android:id="@+id/tvPrice5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Rp 26.000"
+                        android:textColor="#5C3A21"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle5"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDesc5" />
+
+                    <ImageButton
+                        android:id="@+id/btnAdd5"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_button_plus"
+                        android:src="@android:drawable/ic_input_add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#FFFFFF" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- MENU 6: Cold Brew Special -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#FFF8EE"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:strokeColor="#EAD8C0"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/imgMenu6"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/logo_cafe_jambang"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTitle6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Cold Brew Special"
+                        android:textColor="#5C3A21"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd6"
+                        app:layout_constraintStart_toEndOf="@+id/imgMenu6"
+                        app:layout_constraintTop_toTopOf="@+id/imgMenu6" />
+
+                    <TextView
+                        android:id="@+id/tvDesc6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Slow-steeped coffee for 12 hours with smooth flavor"
+                        android:textColor="#8C6D53"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAdd6"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle6"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitle6" />
+
+                    <TextView
+                        android:id="@+id/tvPrice6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Rp 25.000"
+                        android:textColor="#5C3A21"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tvTitle6"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDesc6" />
+
+                    <ImageButton
+                        android:id="@+id/btnAdd6"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_button_plus"
+                        android:src="@android:drawable/ic_input_add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#FFFFFF" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#5C3A21"
+        app:itemIconTint="#FFFFFF"
+        app:itemTextColor="#FFFFFF"
+        app:menu="@menu/bottom_menu" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
