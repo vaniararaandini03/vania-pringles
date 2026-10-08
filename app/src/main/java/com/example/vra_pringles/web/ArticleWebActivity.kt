@@ -20,7 +20,7 @@ class ArticleWebActivity : AppCompatActivity() {
         // Setup Toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Seputar Kopi Jombang"
+            title = "Seputar Kopi Jambang"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)

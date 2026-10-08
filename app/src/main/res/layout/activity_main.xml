@@ -36,23 +36,6 @@
         app:layout_constraintVertical_bias="0.302" />
 
     <Button
-        android:id="@+id/btnDetailMenu"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/coffee_dark"
-        android:text="Detail Menu"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:cornerRadius="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61" />
-
-    <Button
         android:id="@+id/btnArticleWeb"
         android:layout_width="200dp"
         android:layout_height="50dp"
@@ -67,6 +50,40 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
+        app:layout_constraintVertical_bias="0.668" />
+
+    <Button
+        android:id="@+id/btnDetailMenu"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/coffee_dark"
+        android:text="Detail Menu"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/coffee_dark"
+        android:text="Logout"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Permission untuk akses internet WebView -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Kafe Jombang"
+        android:label="Kafe Jambang"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vra_pringles">
 
+        <!-- 1. Tambahkan LoginActivity di sini -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
 
         <activity
             android:name=".menu.DetailMenuActivity"
@@ -30,6 +29,16 @@
             android:name=".web.ArticleWebActivity"
             android:exported="false" />
 
+        <!-- 2. SplashScreenActivity sebagai Launcher Utama -->
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
