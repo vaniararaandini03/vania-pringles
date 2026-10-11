@@ -1,5 +1,6 @@
-package com.example.vra_pringles.menu
+package com.example.vra_pringles
 
+import android.R
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -25,7 +26,7 @@ class DetailMenuActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            android.R.id.home -> {
+            R.id.home -> {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }

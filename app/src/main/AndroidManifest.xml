@@ -16,29 +16,31 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
-            android:name=".menu.DetailMenuActivity"
+            android:name=".DetailMenuActivity"
             android:exported="false" />
-
         <activity
-            android:name=".web.ArticleWebActivity"
+            android:name=".ArticleWebActivity"
             android:exported="false" />
 
         <!-- 2. SplashScreenActivity sebagai Launcher Utama -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DeveloperProfileActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

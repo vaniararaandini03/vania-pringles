@@ -1,11 +1,10 @@
-package com.example.vra_pringles.web
+package com.example.vra_pringles
 
 import android.os.Bundle
 import android.view.MenuItem
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import com.example.vra_pringles.R
 import com.example.vra_pringles.databinding.ActivityArticleWebBinding
 
 class ArticleWebActivity : AppCompatActivity() {
