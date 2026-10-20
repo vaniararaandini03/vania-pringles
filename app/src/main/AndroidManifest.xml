@@ -17,9 +17,6 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
             android:name=".DetailMenuActivity"
             android:exported="false" />
         <activity
@@ -39,6 +36,10 @@
         </activity>
         <activity
             android:name=".DeveloperProfileActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".BaseActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

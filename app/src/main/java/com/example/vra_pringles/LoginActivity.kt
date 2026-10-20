@@ -42,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
                 editor.putString("username", username)
                 editor.apply()
 
-                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                val intent = Intent(this@LoginActivity, BaseActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

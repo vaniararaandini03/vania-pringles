@@ -86,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Vania"
+                    android:text="Vania Rara Andini"
                     android:textColor="#FFFFFF"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -135,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Instagram: @vania_3tie\nGitHub: github.com/vania"
+                    android:text="Instagram: @vaniandinii_\nGitHub: github.com/vaniararaandini03"
                     android:textColor="#6E4A2E"
                     android:textSize="14sp"
                     android:lineSpacingExtra="4dp" />
@@ -175,7 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Coding, Ngopi, dan Membaca Buku"
+                    android:text="Nonton Film, Mendengarkan Musik, dan Jajan"
                     android:textColor="#6E4A2E"
                     android:textSize="14sp" />
 
