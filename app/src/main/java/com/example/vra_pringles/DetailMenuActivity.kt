@@ -1,6 +1,7 @@
 package com.example.vra_pringles
 
 import android.R
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,10 @@ class DetailMenuActivity : AppCompatActivity() {
             title = "Detail Menu"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+        }
+
+        binding.cardCalendarBooking.setOnClickListener {
+            startActivity(Intent(this, CalendarActivity::class.java))
         }
     }
 

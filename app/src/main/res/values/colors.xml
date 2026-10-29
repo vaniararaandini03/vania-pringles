@@ -6,4 +6,7 @@
     <color name="coffee_bg">#FCEFD8</color>
     <color name="white">#FFFFFF</color>
     <color name="hitam">#000000</color>
+    <color name="grey">#aaa</color>
+    <color name="darkGrey">#ff424242</color>
+    <color name="lavender">#8692f7</color>
 </resources>

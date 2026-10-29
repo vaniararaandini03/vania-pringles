@@ -1,10 +1,10 @@
 package com.example.vra_pringles
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
@@ -17,6 +17,16 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        // Apply saved Dark Mode preference
+        val sharedPrefInit = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val isDarkModeInit = sharedPrefInit.getBoolean("is_dark_mode", false)
+        if (isDarkModeInit) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -28,7 +38,7 @@ class SplashScreenActivity : AppCompatActivity() {
             delay(2000) //simulasi pengambilan data selama 2 detik
 
 
-            val sharedPref = getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+            val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
             val isLogin = sharedPref.getBoolean("isLogin", false)
 
 

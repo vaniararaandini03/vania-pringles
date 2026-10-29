@@ -1,14 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ScreenBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".menu.MenuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-</FrameLayout>
+        <!-- Header Title -->
+        <TextView
+            style="@style/TextColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="What would you\nlike to drink today?"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/etSearch"
+            style="@style/TextColor"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_search_input"
+            android:hint="Search Coffee, Tea, or Pastry..."
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColorHint="#9E9E9E"
+            android:textSize="14sp" />
+
+        <!-- Card Reservasi & Kalender Kunjungan -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="?attr/colorPrimary"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvCalendarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@id/btnOpenCalendar"
+                    android:text="📅 Reservasi Meja &amp; Kalender"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btnOpenCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="4dp"
+                    android:text="Buka ➔"
+                    android:textColor="#D7CCC8"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section Title: Popular Menu -->
+        <TextView
+            style="@style/TextColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Popular Menu"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Item Menu 1: Espresso -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="14dp">
+
+                <ImageView
+                    android:id="@+id/imgMenu1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo_cafe_jambang" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="14dp"
+                    android:layout_toEndOf="@id/imgMenu1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Espresso Special Kafe Jambang"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Rp 22.000"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageButton
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_input_add"
+                    app:tint="?attr/colorPrimary" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Item Menu 2: Cafe Latte -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="14dp">
+
+                <ImageView
+                    android:id="@+id/imgMenu2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo_cafe_jambang" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="14dp"
+                    android:layout_toEndOf="@id/imgMenu2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Creamy Caffe Latte"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Rp 28.000"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageButton
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_input_add"
+                    app:tint="?attr/colorPrimary" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Item Menu 3: Chocolate Croissant -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="14dp">
+
+                <ImageView
+                    android:id="@+id/imgMenu3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo_cafe_jambang" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="14dp"
+                    android:layout_toEndOf="@id/imgMenu3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chocolate Croissant"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Rp 25.000"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageButton
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_input_add"
+                    app:tint="?attr/colorPrimary" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

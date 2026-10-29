@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Base.Theme.Vra_pringles" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Merubah warna primary ke Cokelat Kopi Logo -->
-        <item name="colorPrimary">@color/coffee_dark</item>
-        <item name="colorPrimaryVariant">@color/coffee_primary</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">#5C3A21</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryVariant">#3E2723</item>
+        <item name="android:statusBarColor">#3E2723</item>
+        <item name="android:navigationBarColor">#5C3A21</item>
+        <item name="android:windowBackground">#F4EAD4</item>
     </style>
 
     <style name="Theme.Vra_pringles" parent="Base.Theme.Vra_pringles" />
+
+    <style name="ScreenBackground">
+        <item name="android:background">#F4EAD4</item>
+    </style>
+
+    <style name="CardBackground">
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="TextColor">
+        <item name="android:textColor">#5C3A21</item>
+    </style>
 </resources>

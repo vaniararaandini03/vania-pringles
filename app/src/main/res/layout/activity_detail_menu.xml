@@ -141,6 +141,48 @@
             android:orientation="vertical"
             android:paddingBottom="80dp">
 
+            <!-- Calendar Reservation Banner Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCalendarBooking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="#5C3A21"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:rippleColor="#D1B89D">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:clickable="false"
+                    android:focusable="false">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📅 Reservasi Meja &amp; Kalender Kunjungan"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Buka ➔"
+                        android:textColor="#D1B89D"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
             <!-- MENU 1: Iced Americano -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"

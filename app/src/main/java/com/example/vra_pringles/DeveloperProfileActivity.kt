@@ -1,10 +1,9 @@
+
 package com.example.vra_pringles
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.vra_pringles.databinding.ActivityDeveloperProfileBinding
 
 class DeveloperProfileActivity : AppCompatActivity() {
@@ -13,20 +12,32 @@ class DeveloperProfileActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
 
         binding = ActivityDeveloperProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        val prefs = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        // Atur status switch sesuai preferensi yang tersimpan
+        binding.switchDarkMode.isChecked =
+            prefs.getBoolean("is_dark_mode", false)
+
+        binding.switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+            prefs.edit()
+                .putBoolean("is_dark_mode", isChecked)
+                .apply()
+
+            AppCompatDelegate.setDefaultNightMode(
+                if (isChecked) {
+                    AppCompatDelegate.MODE_NIGHT_YES
+                } else {
+                    AppCompatDelegate.MODE_NIGHT_NO
+                }
+            )
         }
 
-        // Aksi ketika tombol Back diklik
         binding.btnBack.setOnClickListener {
-            finish() // Menutup activity ini dan kembali ke MainActivity
+            finish()
         }
     }
 }

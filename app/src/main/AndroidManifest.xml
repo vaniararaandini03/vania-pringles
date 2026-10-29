@@ -22,12 +22,21 @@
         <activity
             android:name=".ArticleWebActivity"
             android:exported="false" />
+        <activity
+            android:name=".CalendarActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
         <!-- 2. SplashScreenActivity sebagai Launcher Utama -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".DeveloperProfileActivity"
@@ -39,14 +48,8 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".VerificationActivity"
             android:exported="false"
