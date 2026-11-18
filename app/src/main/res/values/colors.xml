@@ -9,4 +9,10 @@
     <color name="grey">#aaa</color>
     <color name="darkGrey">#ff424242</color>
     <color name="lavender">#8692f7</color>
+    <color name="choco_dark">#4E2A1E</color>
+    <color name="choco_primary">#7B3F20</color>
+    <color name="coffee_latte">#C89F7B</color>
+    <color name="cream_bg">#FDF5E6</color>
+    <color name="cream_card">#FFFDF9</color>
+    <color name="abu_gelap">#808080</color>
 </resources>

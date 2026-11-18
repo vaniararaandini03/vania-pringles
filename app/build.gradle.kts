@@ -1,4 +1,3 @@
-
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -40,6 +39,11 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
+
+    // Tambahan untuk Pertemuan 11 (RecyclerView, Glide, & DotsIndicator)
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.tbuonomo:dotsindicator:5.1.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)

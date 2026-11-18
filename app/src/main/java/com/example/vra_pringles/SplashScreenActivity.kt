@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.vra_pringles.databinding.ActivitySplashScreenBinding
+import com.example.vra_pringles.tutorial.TutorialActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -35,17 +36,15 @@ class SplashScreenActivity : AppCompatActivity() {
             insets
         }
         lifecycleScope.launch {
-            delay(2000) //simulasi pengambilan data selama 2 detik
-
+            delay(2000) // simulasi pengambilan data selama 2 detik
 
             val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
             val isLogin = sharedPref.getBoolean("isLogin", false)
 
-
             val intent = if (isLogin) {
-                Intent(this@SplashScreenActivity, BaseActivity::class.java) // True -> MainActivity
+                Intent(this@SplashScreenActivity, BaseActivity::class.java) // True -> BaseActivity
             } else {
-                Intent(this@SplashScreenActivity, LoginActivity::class.java) // False -> AuthActivity
+                Intent(this@SplashScreenActivity, TutorialActivity::class.java) // False -> Onboard Screen dulu
             }
 
             startActivity(intent)
